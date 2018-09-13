@@ -5,7 +5,7 @@ Ion Core integration/staging repository
 
 ### Important information
 
-Majority of ion contributors decided to move on from CEVAP's branch to a new one which is believed to fit better to marketing and maybe some other purposes. There will be no further CEVAP releases for ion, project is moved to new community runned repository: https://github.com/ioncoincore/ . Version [v3.0.4](https://github.com/cevap/ion/releases/tag/3.0.4) is the last one which is hosted/published on CEVAP. New repository will be updated in following days and next version will be published only there: 
+Majority of ion contributors decided to move on from CEVAP's branch to a new one which is believed to fit better to marketing and maybe some other purposes. There will be no further CEVAP releases for ion, project is moved to new community runned repository: https://github.com/ioncoincore/ . Version [v3.0.5](https://github.com/cevap/ion/releases/tag/3.0.5) is the last one which is hosted/published on CEVAP. New repository will be updated in following days and next version will be published only there: 
 
   https://github.com/ioncoincore/ion/releases
   
