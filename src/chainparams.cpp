@@ -54,13 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-        (       0,	uint256("0000004cf5ffbf2e31a9aa07c86298efb01a30b8911b80af7473d1114715084b") ) // Genesis block       
-        (  550001,  uint256("aa063547717c4e9f1f1593a580143491896cde85a0b369442d629cd364a1b78d") ) // Zerocoin Start (v8)    1521903907   1464462)
-        (  550142,  uint256("4a9e4ee53bc441e0aadf788b5daa9b8d01a3a6debed01b5c599d6f7e22f4f7d0") ) //                        1521912217   1464746
-        (  552317,  uint256("654cf4e6d0e9d8249075c674a54859849b2648cfe35ea71e25bd6394f24331b2") ) //                        1522095098   1469475
-        (  761263,  uint256("24213c82d6ea427f02951b3942ff6f80bcccee9bb83690d39a74595bd814653b") ) //                        1534790949   2000624
-        (  761522,  uint256("72053aaa24af1d6ea39c9bc72bfc18302c49e6f365a082979fcc48ec67a2b7d9") ) //                        1534807651   2001224
-        (  762150,  uint256("0cecda8b84c3c8395f9340678416d28799069ccf4ce1ad78cd27dd42ab3018f5") );//                        1534845571   2002764
+        (       0,	uint256("0000004cf5ffbf2e31a9aa07c86298efb01a30b8911b80af7473d1114715084b") ); 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1534845571, // * UNIX timestamp of last checkpoint block
@@ -121,14 +115,14 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xc4;              
-        pchMessageStart[1] = 0xe1;              
-        pchMessageStart[2] = 0xd8;              
-        pchMessageStart[3] = 0xec;              
-        vAlertPubKey = ParseHex("04ab1a302b40c65c08281974e4ccbe6df987d8a87cbc490ace9a261d8a57b809a5dad39f53bdc85e392c61c3c5a3f990d53430bb40a731ff28fa2255fecef70da3");
-        nDefaultPort = 12700;                   
-        bnProofOfWorkLimit  = uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        bnProofOfStakeLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        pchMessageStart[0] = 0xd2;              
+        pchMessageStart[1] = 0x2d;              
+        pchMessageStart[2] = 0x1c;              
+        pchMessageStart[3] = 0xe5;
+        vAlertPubKey = ParseHex("04cc24ab003c828cdd9cf4db2ebbde8esdfsdfsdsdfsdfsfsdfsdf1cecb3bbfa8b3127fcb9dd9b84d44112080827ed7c49a648af9fe788ff42e316aee665879c553f099e55299d6b54edd7e0");
+        nDefaultPort = 39999;                   
+        bnProofOfWorkLimit  = (~uint256(0) >> 16);
+        bnProofOfStakeLimit = (~uint256(0) >> 20); 
         nSubsidyHalvingInterval = 210000;       // Halving interval
         nMaxReorganizationDepth = 100;          
         nEnforceBlockUpgradeMajority = 750;     
@@ -140,21 +134,21 @@ public:
         nTargetSpacing = 1 * 60;                    // 1 minute
         nMaturity = 60;                             // Block maturity   
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 38600000 * COIN;
+        nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 1000;                         // PoW Phase 3 End
+        nLastPOWBlock = 220;                         // PoW Phase 3 End
         nMidasStartHeight = 176500;                   // MIDAS startheight, first big attack
         nMidasStartTime = 1497541280;                 // Time when MIDAS started and old algorithm stopped
         nDGWStartHeight = 550000;                     // Startheight of DGW
-        nDGWStartTime = 1521851265;                   // GMT: Saturday, March 24, 2018 12:27:45 AM - Exact time when DGW algorithm starts and old MIDAS stops
-        nZerocoinStartHeight = 550001;                // Zerocoin start height, starts together with DGW
-        nZerocoinStartTime = 1521851265;              // GMT: Saturday, March 24, 2018 12:27:45 AM, 
+        nDGWStartTime = 2521851265;                   // GMT: Saturday, March 24, 2018 12:27:45 AM - Exact time when DGW algorithm starts and old MIDAS stops
+        nZerocoinStartHeight = 500000001;                // Zerocoin start height, starts together with DGW
+        nZerocoinStartTime = 2521851265;              // GMT: Saturday, March 24, 2018 12:27:45 AM, 
         nBlockEnforceSerialRange = 550137;            // Enforce serial range starting this block
         nBlockRecalculateAccumulators = 550137;       // Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 99999999;             // 1110; //First block that bad serials emerged (currently we do not have any) *** TODO ***
-        nBlockLastGoodCheckpoint = 550137;            // Last valid accumulator checkpoint (currently we do not have any) *** TODO ***
-        nBlockEnforceInvalidUTXO = 550137;            // Start enforcing the invalid UTXO's's
+        nBlockLastGoodCheckpoint = 55550137;            // Last valid accumulator checkpoint (currently we do not have any) *** TODO ***
+        nBlockEnforceInvalidUTXO = 55550137;            // Start enforcing the invalid UTXO's's
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -166,40 +160,44 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "The Guardian: [2nd Feb 2017] Finsbury Park mosque wins apology and damages from Thomson Reuters";
-        genesis.nTime = 1486045800;                                         // GMT: Thursday, February 2, 2017 2:30:00 PM
+        const char* pszTimestamp = "On 2018/8/13 We make the world better by SPHINX.";
+        genesis.nTime = 1534163480;                                         // GMT: Thursday, February 2, 2017 2:30:00 PM
 
         CMutableTransaction txNew;
         txNew.nTime = genesis.nTime;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 1486045800 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 1 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("045622582bdfad9366cdff9652d35a562af17ea4e3462d32cd988b32919ba2ff4bc806485be5228185ad3f75445039b6e744819c4a63304277ca8d20c99a6acec8") << OP_CHECKSIG;
+	txNew.vout[0].SetEmpty();
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nBits = 0x1e00ffff;
-        genesis.nNonce = 28884498;
+        genesis.nBits = 0x1f00ffff;
+        genesis.nNonce = 668663;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000004cf5ffbf2e31a9aa07c86298efb01a30b8911b80af7473d1114715084b"));
-        assert(genesis.hashMerkleRoot == uint256("0x7af2e961c5262cb0411edcb7414ab7178133fc06257ceb47d349e4e5e35e2d40"));
+	//printf("nVersion = %d\n,genensis = %s\n;hashGenesisBlock = %s\n",genesis.nVersion,genesis.ToString().c_str(),hashGenesisBlock.ToString().c_str());
+	//printf("genesis.hashMerkleRoot = %s\n",genesis.hashMerkleRoot.GetHex().c_str());
+        assert(hashGenesisBlock == uint256("0x0000031c79da6e1f6696f8cace965a197cb066da695081cae656ee90d7c44835"));
+        assert(genesis.hashMerkleRoot == uint256("0x39dcb47ad0e3112e85eb60dd69cbdf6a5b3bbf3b63330c258858707ecf216c73"));
 
-        vSeeds.push_back(CDNSSeedData("1", "main.seeder.baseserv.com"));      // Ion's official seed 1
-        vSeeds.push_back(CDNSSeedData("2", "main.seeder.uksafedns.net"));      // Ion's official seed 2
 
         // Ion addresses start with 'i'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 103);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 88);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 0x39);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 85);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 153);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
         // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >(); // (**TODO**)
 
-        convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
+        //convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
+	vSeeds.push_back(CDNSSeedData("s1", "s1.sphinx-coin.com"));
+        vSeeds.push_back(CDNSSeedData("s2", "s2.sphinx-coin.com"));
+        vSeeds.push_back(CDNSSeedData("s3", "s3.sphinx-coin.com"));
+
 
         fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
