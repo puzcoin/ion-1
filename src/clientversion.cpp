@@ -13,12 +13,12 @@
  * for both iond and ion-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Sagittarius");
+const std::string CLIENT_NAME("Ioncoin Core");
 
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX "-CEVAP"
+#define CLIENT_VERSION_SUFFIX "-BRIDGE"
 
 
 /**
