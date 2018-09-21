@@ -57,7 +57,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (       0,	uint256("0000004cf5ffbf2e31a9aa07c86298efb01a30b8911b80af7473d1114715084b") ); 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1534845571, // * UNIX timestamp of last checkpoint block
+    1034845571, // * UNIX timestamp of last checkpoint block
     2002764,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -66,18 +66,6 @@ static const Checkpoints::CCheckpointData data = {
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
 	(       1,      uint256("000000b86fdd7f2ae9e9973e73790492989113075a2d5c581495ab7bb2ad5711") ) // First block 
-	(      10,      uint256("0000008c29a7d680710d1cc821d79f33ba0159bc26d9e233bccfabd668b0430e") ) // Confirmation of first block
-	(      73,      uint256("0000000000414be74794bb2e455e24c0e446ad36df162c69a81742dc07f51d0d") ) // 
-	(      74,      uint256("1881b795f7531232ba90ade14c16b7f0cf9392b6c9fe76a3d5bfeab9150b7dca") ) // ERROR: AcceptBlock : prev block 1881b795f7531232ba90ade14c16b7f0cf9392b6c9fe76a3d5bfeab9150b7dca is invalid, unable to add block c54904618b734eeb3f098b442934586806f869e80656eacfba65ca91a091cf31
-	(      75,      uint256("c54904618b734eeb3f098b442934586806f869e80656eacfba65ca91a091cf31") ) // ERROR: AcceptBlock : prev block 1881b795f7531232ba90ade14c16b7f0cf9392b6c9fe76a3d5bfeab9150b7dca is invalid, unable to add block c54904618b734eeb3f098b442934586806f869e80656eacfba65ca91a091cf31
-	(     300,      uint256("000000125e3e3d005aa72281e02b4ebaabc2fa9aed817b9365a8d29bb7901c10") ) // Last POW Block
-	(   75000,      uint256("20faec3994dac57fb88748e29139974522c91036e1bf8ff204c769a90fab5a12") ) // Fork June 2017
-	(   85000,      uint256("43ee28cd1f804dafe05ef120569726e50e9e6f2b634746925742cbd9f738c201") ) // Fork June 2017
-	(   88800,      uint256("2807b46cbfa28a2d4854215b40f4db64b62fc71a1d010844d67d7c03888ce692") ) // Fork June 2017
-    (  331099,      uint256("1ba565ae5336eeb1cbdc4c8804f229f685391d6b9a8568f7baf5c70b80bed17e") ) // Fork March 2018
-    (  331100,      uint256("b12c1f1b86a40b96a192b558e845a67a7085bcad3eae986524f19f6ee4131a80") ) // Fork March 2018
-	(  334500,      uint256("c7dfe5fe124807fdc10ca60021f19ec87d00a107feea0dc5ceda5be26db4e5d4") ) // Fork March 2018
-	(  337000,      uint256("cefc4c13a1b2fc3cda8b04244b35ce76b8e32fe22cc6bce44b1a9971dddd3074") ) // Fork March 2018
 	(  370000,      uint256("c2761da33448b864d880503bfd9a94961c93ecc539360e466336d13b2569142f") );// Fork March 2018
 
 static const Checkpoints::CCheckpointData dataTestnet = {
@@ -210,7 +198,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04f8c457bd279e667228d38faf2032958ee80ead5ec3d04ab92eeab54ac078ea2a79a2a03dee10634123cc47ea795699bd02b6370e040b622b2f15bcc56dafc2b7";
-        strObfuscationPoolDummyAddress = "ijeSPVizJAFuKx4E3rEAcadQR5tZF9cjC8";
+        strObfuscationPoolDummyAddress = "SphinxcoinDarksendPoo1DummyAdy4viSr";
         nStartMasternodePayments = 1558696182; // GMT: Thursday, 15. February 2018 12:03:02
 
         /** Zerocoin */
