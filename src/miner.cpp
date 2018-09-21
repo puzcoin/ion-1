@@ -542,9 +542,9 @@ bool fGenerateBitcoins = false;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("IONMiner started\n");
+    LogPrintf("IONDigger started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("ion-miner");
+    RenameThread("ion-digger");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
