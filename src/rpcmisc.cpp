@@ -65,7 +65,7 @@ UniValue getinfo(const UniValue& params, bool fHelp)
             "  \"difficulty\": xxxxxx,       (numeric) the current difficulty\n"
             "  \"testnet\": true|false,      (boolean) if the server is using testnet or not\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"xIONsupply\" :\n"
+/*            "  \"xIONsupply\" :\n"
             "  {\n"
             "     \"1\" : n,            (numeric) supply of 1 xION denomination\n"
             "     \"5\" : n,            (numeric) supply of 5 xION denomination\n"
@@ -77,7 +77,7 @@ UniValue getinfo(const UniValue& params, bool fHelp)
             "     \"5000\" : n,         (numeric) supply of 5000 xION denomination\n"
             "     \"total\" : n,        (numeric) The total supply of all xION denominations\n"
             "  }\n"
-            "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
+*/            "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
             "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee set in ion/kb\n"
@@ -121,13 +121,13 @@ UniValue getinfo(const UniValue& params, bool fHelp)
     }
 
     obj.push_back(Pair("moneysupply",ValueFromAmount(chainActive.Tip()->nMoneySupply)));
-    UniValue xionObj(UniValue::VOBJ);
+/*    UniValue xionObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
         xionObj.push_back(Pair(to_string(denom), ValueFromAmount(chainActive.Tip()->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
     xionObj.push_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
     obj.push_back(Pair("xIONsupply", xionObj));
-
+*/
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
         obj.push_back(Pair("keypoololdest", pwalletMain->GetOldestKeyPoolTime()));

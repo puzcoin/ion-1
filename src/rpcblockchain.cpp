@@ -116,14 +116,14 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
         result.push_back(Pair("nextblockhash", pnext->GetBlockHash().GetHex()));
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
-
+/*
     UniValue xionObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
         xionObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
     xionObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
     result.push_back(Pair("xIONsupply", xionObj));
-
+*/
     return result;
 }
 
@@ -307,18 +307,18 @@ UniValue getblock(const UniValue& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"xIONsupply\" :\n"
-            "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 xION denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 xION denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 xION denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 xION denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 xION denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 xION denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 xION denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 xION denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all xION denominations\n"
-            "  }\n"
+//            "  \"xIONsupply\" :\n"
+//            "  {\n"
+//            "     \"1\" : n,            (numeric) supply of 1 xION denomination\n"
+//            "     \"5\" : n,            (numeric) supply of 5 xION denomination\n"
+//            "     \"10\" : n,           (numeric) supply of 10 xION denomination\n"
+//            "     \"50\" : n,           (numeric) supply of 50 xION denomination\n"
+//            "     \"100\" : n,          (numeric) supply of 100 xION denomination\n"
+//            "     \"500\" : n,          (numeric) supply of 500 xION denomination\n"
+//            "     \"1000\" : n,         (numeric) supply of 1000 xION denomination\n"
+//            "     \"5000\" : n,         (numeric) supply of 5000 xION denomination\n"
+//            "     \"total\" : n,        (numeric) The total supply of all xION denominations\n"
+//            "  }\n"
             "}\n"
             "\nResult (for verbose=false):\n"
             "\"data\"             (string) A string that is serialized, hex-encoded data for block 'hash'.\n"

@@ -254,8 +254,8 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // Adjust bubble-help according to AutoMint settings
     QString automintHelp = tr("Current percentage of xION.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
-    bool fEnableZeromint = GetBoolArg("-enablezeromint", true);
-    int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
+    bool fEnableZeromint = false;//GetBoolArg("-enablezeromint", true);
+    int nZeromintPercentage = 0;//GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
         automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in ioncoin.conf.");
