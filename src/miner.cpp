@@ -136,7 +136,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         CBlockIndex* pindexPrev = chainActive.Tip();
         pblock->nBits = GetNextWorkRequired(pindexPrev, pblock, true);
         CMutableTransaction txCoinStake;
-        int64_t nSearchTime = pblock->nTime; // search to current time
+        txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
+        int64_t nSearchTime = txCoinStake.nTime; // search to current time
         bool fStakeFound = false;
         if (nSearchTime >= nLastCoinStakeSearchTime) {
             unsigned int nTxNewTime = 0;

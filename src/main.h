@@ -9,6 +9,7 @@
 #ifndef BITCOIN_MAIN_H
 #define BITCOIN_MAIN_H
 
+#define STAKE_TIMESTAMP_MASK 15
 #if defined(HAVE_CONFIG_H)
 #include "config/ion-config.h"
 #endif
